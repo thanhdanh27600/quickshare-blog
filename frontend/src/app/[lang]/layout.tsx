@@ -71,11 +71,11 @@ export default async function RootLayout({
 	const {notificationBanner, navbar, footer} = global.data.attributes;
 
 	const navbarLogoUrl = getStrapiMedia(
-		navbar.navbarLogo.logoImg.data.attributes.url
+		navbar?.navbarLogo?.logoImg.data.attributes.url
 	);
 
 	const footerLogoUrl = getStrapiMedia(
-		footer.footerLogo.logoImg.data.attributes.url
+		footer?.footerLogo?.logoImg.data.attributes.url
 	);
 
 	return (
@@ -84,7 +84,7 @@ export default async function RootLayout({
 				<Navbar
 					links={navbar.links}
 					logoUrl={navbarLogoUrl}
-					logoText={navbar.navbarLogo.logoText}
+					logoText={navbar.navbarLogo?.logoText}
 				/>
 
 				<main className="dark:bg-black dark:text-gray-100 min-h-screen">
@@ -95,7 +95,7 @@ export default async function RootLayout({
 
 				<Footer
 					logoUrl={footerLogoUrl}
-					logoText={footer.footerLogo.logoText}
+					logoText={footer.footerLogo?.logoText}
 					menuLinks={footer.menuLinks}
 					categoryLinks={footer.categories.data}
 					legalLinks={footer.legalLinks}
